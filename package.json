@@ -1,0 +1,17 @@
+{
+  "name": "ang-shop",
+  "version": "1.0.0",
+  "description": "A little app to practice making a small store with user auth using the MEAN stack.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.8"
+  }
+}
