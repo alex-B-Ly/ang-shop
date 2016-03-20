@@ -3,30 +3,64 @@
 <head>
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-  <script type="text/javascript" src="/static/js/functionality.js"></script>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
   <div class="container">
 
-    <div class="row">
+    <div class="row text-center">
       <header>
-        <h1>Weapons Dealer</h1>
+        <h1>Pet Store</h1>
       </header>
     </div>
 
     <section ng-controller="shop">
-      <div ng-hide="loggedIn">
-        <button ng-click="login()">Log In</button>
+      <div class="row text-center" ng-hide="loggedIn">
+        <div class="col-xs-12 register-area" ng-hide="registered">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#regModal">Register</button>
+        </div>
+        <div class="col-xs-12 login-area">
+          <button class="btn btn-primary" ng-click="login()">Log In</button>
+        </div>
       </div>
       <div ng-show="loggedIn">
-        <h2>Weapons for Sale</h2>
+        <h2>Pets for Sale</h2>
+        <!-- TODO Pass in welcome message here with username. -->
       </div>
+
+      <!-- REGISTER MODAL -->
+      <div id="regModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content text-center">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Register</h4>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <input type="text" placeholder="Enter your username" />
+                </div>
+                <div class="form-group">
+                  <input id="reg-pass" type="password" placeholder="Enter your password" />
+                </div>
+                <div class="form-group">
+                  <input id="reg-repass" type="password" placeholder="Confirm your password" />
+                </div>
+                <button class="btn btn-primary" type="submit" data-dismiss="modal"  ng-click="register()">Register</button>
+                <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+              </form>          
+            </div>
+          </div>
+        </div>
+      </div> <!-- END REGISTER MODAL -->
+
     </section>
 
   </div> <!-- END CONTAINER -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/functionality.js"></script>
 </body>
 </html>

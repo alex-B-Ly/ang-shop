@@ -1,9 +1,16 @@
+// ANGULAR CODE
+
 var ngApp = angular.module('store', []);
 
 ngApp.controller('shop', function($scope){
 
   $scope.login = function(){
     console.log('login works');
-    $scope.loggedIn = true;
+    this.loggedIn = true;
+  }
+
+  $scope.register = function(){
+    console.log('REGISTERED');
+    this.registered = true;
   }
 });
