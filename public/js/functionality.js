@@ -6,5 +6,4 @@ ngApp.controller('shop', function($scope){
     console.log('login works');
     $scope.loggedIn = true;
   }
-
 });

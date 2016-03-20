@@ -11,13 +11,16 @@
 
     <div class="row">
       <header>
-        <h1>Pet Factory</h1>
+        <h1>Weapons Dealer</h1>
       </header>
     </div>
 
     <section ng-controller="shop">
       <div ng-hide="loggedIn">
-        <button ng-click="login()">Button</button>
+        <button ng-click="login()">Log In</button>
+      </div>
+      <div ng-show="loggedIn">
+        <h2>Weapons for Sale</h2>
       </div>
     </section>
 
