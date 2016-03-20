@@ -2,16 +2,28 @@
 <html ng-app="store">
 <head>
   <title></title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script type="text/javascript" src="/static/js/functionality.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-  
-  <section ng-controller="featuredItems">
-    <ul>
-      <li ng-repeat="item in featuredStuff">{{ item }}</li>
-    </ul>
-  </section>
+  <div class="container">
 
-  <script type="text/javascript" src="/static/js/functionality.js"></script>
+    <div class="row">
+      <header>
+        <h1>Pet Factory</h1>
+      </header>
+    </div>
+
+    <section ng-controller="shop">
+      <div ng-hide="loggedIn">
+        <button ng-click="login()">Button</button>
+      </div>
+    </section>
+
+  </div> <!-- END CONTAINER -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
