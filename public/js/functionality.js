@@ -12,12 +12,17 @@ ngApp.controller('shopController', function($scope, $http){
       url: '/login',
       data: {username: shop.loginUsername, password: shop.loginPassword}
     }).then(function(result){
-      console.log(result.data);
-      $scope.username = result.data.username;
+
+      if(result.data[0]){
+        console.log('getting data back');
+        this.loggedIn = true;
+      }else{
+        console.log('fail');
+      }
+
+      // $scope.username = result.data.username;
       // TODO Create all the other keys in the users model and get the relevant ones in here for use
     });
-
-    this.loggedIn = true;
   }
 
   $scope.register = function(){

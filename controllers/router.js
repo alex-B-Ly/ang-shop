@@ -24,7 +24,7 @@ router.post('/register', function(req, res){
 
 // LOGIN
 router.post('/login', function(req, res){
-  Users.findOne({ username: req.body.username })
+  Users.find({ username: req.body.username })
     .exec(function(err, user){
       if(err){
         console.log(err);
@@ -33,8 +33,6 @@ router.post('/login', function(req, res){
         res.send(user);
       }
     });
-
-  // res.send('hi');
 });
 
 module.exports = router;
