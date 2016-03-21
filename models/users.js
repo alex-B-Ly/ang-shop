@@ -11,6 +11,9 @@ var usersSchema = new Schema({
   password:{
     type: String,
     required: true
+  },
+  balance:{
+    type:Number
   }
   // cartItems:[{
   //   type: Schema.Types.ObjectID,

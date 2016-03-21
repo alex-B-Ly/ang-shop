@@ -5,6 +5,7 @@ var ngApp = angular.module('store', []);
 ngApp.controller('shopController', function($scope, $http){
   var shop = this;
 
+  // LOGIN
   $scope.login = function(){
     
     $http({
@@ -25,6 +26,7 @@ ngApp.controller('shopController', function($scope, $http){
     });
   }
 
+  // REGISTER
   $scope.register = function(){
 
     $http({
@@ -36,5 +38,21 @@ ngApp.controller('shopController', function($scope, $http){
       $scope.registered = true;
     });
   }
+
+  // updateBalance
+  $scope.updateBalance = function(){
+
+    $http({
+      method: 'PUT',
+      url: '/update-balance',
+      data: {username: $scope.username, balance: shop.balanceUpdater}
+    }).then(function(result){
+      console.log(result);
+    })
+
+  }
+
+
+
 
 });
