@@ -15,12 +15,12 @@ ngApp.controller('shopController', function($scope, $http){
 
       if(result.data[0]){
         console.log('getting data back');
-        this.loggedIn = true;
+        $scope.loggedIn = true;
+        $scope.username = result.data[0].username;
       }else{
         console.log('fail');
       }
-
-      // $scope.username = result.data.username;
+      
       // TODO Create all the other keys in the users model and get the relevant ones in here for use
     });
   }
