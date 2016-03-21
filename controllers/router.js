@@ -34,4 +34,17 @@ router.post('/login', function(req, res){
     });
 });
 
+// UPDATE-BALANCE
+router.put('/update-balance', function(req, res){
+  Users.findOneAndUpdate({ username: req.body.username }, {balance: req.body.balance}, {new:true}, function(err, doc){
+    if(err){
+      console.log(err);
+      res.send(err);
+    }else{
+      res.send(doc);
+    }
+  });
+});
+
+
 module.exports = router;
