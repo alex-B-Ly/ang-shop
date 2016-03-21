@@ -26,9 +26,19 @@
           <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Log In</button>
         </div>
       </div>
+
+      <div ng-hide="loggedIn">
+        <div class="row text-center" ng-show="registered">
+          <h4>Hello, {{username}}.  Thank you for registering with us.  Please login to start buying your pets / emergency food.</h4>
+        </div>
+        <div class="row text-center" ng-show="loginFail">
+          <h4>Your credentials do not work.</h4>
+        </div>
+      </div>
+
       <div ng-show="loggedIn">
-        <h2>Pets for Sale</h2>
-        <!-- TODO Pass in welcome message here with username. -->
+        <h3>Welcome, {{username}}. Here is your information:</h3>
+        <!-- TODO Pass in user info. -->
       </div>
 
       <!-- REGISTER MODAL -->
@@ -70,10 +80,10 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <input type="text" placeholder="Enter your username" />
+                  <input type="text" placeholder="Enter your username" ng-model="shop.loginUsername" />
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Enter your password" />
+                  <input type="password" placeholder="Enter your password" ng-model="shop.loginPassword" />
                 </div>
                 <button class="btn btn-primary" type="submit" data-dismiss="modal" ng-click="login()">Log In</button>
                 <button class="btn btn-danger" data-dismiss="modal">Cancel</button>

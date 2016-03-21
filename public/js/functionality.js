@@ -6,23 +6,35 @@ ngApp.controller('shopController', function($scope, $http){
   var shop = this;
 
   $scope.login = function(){
-    console.log('login works');
-    this.loggedIn = true;
+    
+    $http({
+      method: 'POST',
+      url: '/login',
+      data: {username: shop.loginUsername, password: shop.loginPassword}
+    }).then(function(result){
+
+      if(result.data[0]){
+        console.log('getting data back');
+        $scope.loggedIn = true;
+        $scope.username = result.data[0].username;
+      }else{
+        $scope.loginFail = true;
+      }
+      
+      // TODO Create all the other keys in the users model and get the relevant ones in here for use
+    });
   }
 
   $scope.register = function(){
-    console.log(shop.regUsername);
-    console.log(shop.regPassword);
 
     $http({
       method: 'POST',
       url: '/register',
       data: {username: shop.regUsername, password: shop.regPassword}
     }).then(function(result){
-      console.log('this is running');
-
+      $scope.username = result.data.username;
+      $scope.registered = true;
     });
-
-    this.registered = true;
   }
+
 });
