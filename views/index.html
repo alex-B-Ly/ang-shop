@@ -26,9 +26,16 @@
           <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Log In</button>
         </div>
       </div>
+
+      <div ng-hide="loggedIn">
+        <div class="row" ng-show="registered">
+          <h4>Hello, {{username}}.  Thank you for registering with us.  Please login to start buying your pets / emergency food.</h4>
+        </div>
+      </div>
+
       <div ng-show="loggedIn">
         <h2>Pets for Sale</h2>
-        <!-- TODO Pass in welcome message here with username. -->
+        <!-- TODO Pass in user info. -->
       </div>
 
       <!-- REGISTER MODAL -->

@@ -19,10 +19,9 @@ ngApp.controller('shopController', function($scope, $http){
       url: '/register',
       data: {username: shop.regUsername, password: shop.regPassword}
     }).then(function(result){
-      console.log('this is running');
-
+      $scope.username = result.data.username;
+      $scope.registered = true;
     });
 
-    this.registered = true;
   }
 });

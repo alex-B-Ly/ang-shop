@@ -11,6 +11,16 @@ router.get('/', function(req, res){
 
 router.post('/register', function(req, res){
   console.log(req.body);
+
+  var newUser = new Users(req.body);
+
+  newUser.save(function(err, doc){
+    if(err){
+      console.log(err);
+    }else{
+      res.send(doc);
+    }
+  });
 });
 
 module.exports = router;
