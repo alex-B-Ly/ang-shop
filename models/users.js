@@ -11,11 +11,11 @@ var usersSchema = new Schema({
   password:{
     type: String,
     required: true
-  },
-  cartItems:[{
-    type: Schema.Types.ObjectID,
-    ref:'Item'
-  }]
+  }
+  // cartItems:[{
+  //   type: Schema.Types.ObjectID,
+  //   ref:'Item'
+  // }]
 });
 
-module.exports = mongoose.model('User', itemsSchema);
+module.exports = mongoose.model('User', usersSchema);

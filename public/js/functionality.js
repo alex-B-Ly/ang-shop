@@ -2,7 +2,8 @@
 
 var ngApp = angular.module('store', []);
 
-ngApp.controller('shop', function($scope){
+ngApp.controller('shopController', function($scope, $http){
+  var shop = this;
 
   $scope.login = function(){
     console.log('login works');
@@ -10,7 +11,18 @@ ngApp.controller('shop', function($scope){
   }
 
   $scope.register = function(){
-    console.log('REGISTERED');
+    console.log(shop.regUsername);
+    console.log(shop.regPassword);
+
+    $http({
+      method: 'POST',
+      url: '/register',
+      data: {username: shop.regUsername, password: shop.regPassword}
+    }).then(function(result){
+      console.log('this is running');
+
+    });
+
     this.registered = true;
   }
 });
