@@ -9,9 +9,8 @@ router.get('/', function(req, res){
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
+// REGISTER
 router.post('/register', function(req, res){
-  console.log(req.body);
-
   var newUser = new Users(req.body);
 
   newUser.save(function(err, doc){
@@ -21,6 +20,21 @@ router.post('/register', function(req, res){
       res.send(doc);
     }
   });
+});
+
+// LOGIN
+router.post('/login', function(req, res){
+  Users.findOne({ username: req.body.username })
+    .exec(function(err, user){
+      if(err){
+        console.log(err);
+      }else{
+        console.log(user);
+        res.send(user);
+      }
+    });
+
+  // res.send('hi');
 });
 
 module.exports = router;

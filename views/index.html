@@ -34,7 +34,7 @@
       </div>
 
       <div ng-show="loggedIn">
-        <h2>Pets for Sale</h2>
+        <h3>Welcome, {{username}}. Here is your information:</h3>
         <!-- TODO Pass in user info. -->
       </div>
 
@@ -77,10 +77,10 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <input type="text" placeholder="Enter your username" />
+                  <input type="text" placeholder="Enter your username" ng-model="shop.loginUsername" />
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Enter your password" />
+                  <input type="password" placeholder="Enter your password" ng-model="shop.loginPassword" />
                 </div>
                 <button class="btn btn-primary" type="submit" data-dismiss="modal" ng-click="login()">Log In</button>
                 <button class="btn btn-danger" data-dismiss="modal">Cancel</button>

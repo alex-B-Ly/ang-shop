@@ -6,13 +6,21 @@ ngApp.controller('shopController', function($scope, $http){
   var shop = this;
 
   $scope.login = function(){
-    console.log('login works');
+    
+    $http({
+      method: 'POST',
+      url: '/login',
+      data: {username: shop.loginUsername, password: shop.loginPassword}
+    }).then(function(result){
+      console.log(result.data);
+      $scope.username = result.data.username;
+      // TODO Create all the other keys in the users model and get the relevant ones in here for use
+    });
+
     this.loggedIn = true;
   }
 
   $scope.register = function(){
-    console.log(shop.regUsername);
-    console.log(shop.regPassword);
 
     $http({
       method: 'POST',
@@ -22,6 +30,6 @@ ngApp.controller('shopController', function($scope, $http){
       $scope.username = result.data.username;
       $scope.registered = true;
     });
-
   }
+
 });
