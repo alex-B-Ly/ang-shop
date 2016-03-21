@@ -18,7 +18,7 @@ ngApp.controller('shopController', function($scope, $http){
         $scope.loggedIn = true;
         $scope.username = result.data[0].username;
       }else{
-        console.log('fail');
+        $scope.loginFail = true;
       }
       
       // TODO Create all the other keys in the users model and get the relevant ones in here for use

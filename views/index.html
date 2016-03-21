@@ -28,8 +28,11 @@
       </div>
 
       <div ng-hide="loggedIn">
-        <div class="row" ng-show="registered">
+        <div class="row text-center" ng-show="registered">
           <h4>Hello, {{username}}.  Thank you for registering with us.  Please login to start buying your pets / emergency food.</h4>
+        </div>
+        <div class="row text-center" ng-show="loginFail">
+          <h4>Your credentials do not work.</h4>
         </div>
       </div>
 
