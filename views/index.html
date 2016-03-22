@@ -62,7 +62,15 @@
         <div class="col-xs-12 text-center">
           <h2>List of Animals</h2>
         </div>
-        
+        <!-- each animal -->
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center" ng-repeat="animal in shop.animals">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              Panel content
+            </div>
+            <div class="panel-footer">Panel footer</div>
+          </div>
+        </div>
       </div>
 
       <!-- REGISTER MODAL -->
