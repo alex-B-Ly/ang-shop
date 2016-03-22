@@ -70,14 +70,16 @@ ngApp.controller('shopController', function($scope, $http){
   }
 
   // purchaseAnimal
-  $scope.purchaseAnimal = function(anim_id){
-    console.log(anim_id);
-    // $http({
-    //   method: 'PUT',
-    //   url:'/purchase-animal'
-    // }).then(function(result){
-    //   console.log(result);
-    // });
+  $scope.purchaseAnimal = function(anim_id, anim_stock){
+    anim_stock--;
+
+    $http({
+      method: 'PUT',
+      url:'/purchase-animal',
+      data: {id: anim_id, stock: anim_stock}
+    }).then(function(result){
+      console.log(result);
+    });
 
   }
 

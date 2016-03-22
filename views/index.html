@@ -75,7 +75,7 @@
                 <button type="submit" class="btn btn-primary btn-block">View Comments</button>
               </form>
               <form>
-                <button type="submit" class="btn btn-success btn-block" ng-click="store.purchaseAnimal({{ animal._id }})">Purchase</button>
+                <button type="submit" class="btn btn-success btn-block" ng-click="purchaseAnimal(animal._id, animal.inStock)">Purchase</button>
               </form>
             </div>
           </div>
