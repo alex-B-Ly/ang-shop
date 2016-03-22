@@ -72,10 +72,10 @@
             </div>
             <div class="panel-footer">
               <form ng-submit="store.userComments()">
-                <button class="btn btn-warning btn-block">View Comments</button>
+                <button type="submit" class="btn btn-primary btn-block">View Comments</button>
               </form>
-              <form ng-submit="store.purchaseAnimal()">
-                <button class="btn btn-success btn-block">Purchase</button>
+              <form>
+                <button type="submit" class="btn btn-success btn-block" ng-click="store.purchaseAnimal({{ animal._id }})">Purchase</button>
               </form>
             </div>
           </div>

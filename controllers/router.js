@@ -59,5 +59,10 @@ router.get('/animals', function(req, res){
     });
 });
 
+// PURCHASE-ANIMAL
+// router.put('/purchase-animal', function(req, res){
+//   Items.findOneAndUpdate({})
+// });  
+
 
 module.exports = router;
