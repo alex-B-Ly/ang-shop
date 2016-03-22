@@ -22,9 +22,10 @@ function itemCreate(itemn, iprice, stock){
   item.save();
 }
 
-itemCreate('chihuahua', 20, 52);
-itemCreate('emu', 12000, 2);
-itemCreate('mini giraffe', 8000, 1);
-itemCreate('stray cat', 25, 543);
-itemCreate('puffin', 3200, 4);
-itemCreate('tiger', 47000, 1);
+itemCreate('Komodo Dragon', 67000, 3);
+itemCreate('Emu', 17000, 2);
+itemCreate('Mini Giraffe', 85000, 1);
+itemCreate('White Rhino', 1000000, 2);
+itemCreate('Puffin', 3500, 4);
+itemCreate('Tiger', 47000, 2);
+itemCreate('Red Condor', 38000, 1);

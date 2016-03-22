@@ -4,6 +4,7 @@ var ngApp = angular.module('store', []);
 
 ngApp.controller('shopController', function($scope, $http){
   var shop = this;
+  shop.animals =[];
 
   // LOGIN
   $scope.login = function(){
@@ -62,8 +63,11 @@ ngApp.controller('shopController', function($scope, $http){
       method: 'GET',
       url: '/animals',
     }).then(function(result){
-      console.log(result.data);
-    })
+      angular.forEach(result.data, function(animal){
+        shop.animals.push(animal);
+      });
+      console.log('shop animals: ',shop.animals);
+    });
   }
 
 
