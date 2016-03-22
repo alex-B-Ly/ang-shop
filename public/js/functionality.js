@@ -53,7 +53,18 @@ ngApp.controller('shopController', function($scope, $http){
     })
   }
 
+  // showMeTheAninals
+  $scope.showMeTheAnimals = function(){
+    $scope.activeAnimals = true;
 
+    // TODO http GET to grab animals
+    $http({
+      method: 'GET',
+      url: '/animals',
+    }).then(function(result){
+      console.log(result.data);
+    })
+  }
 
 
 });

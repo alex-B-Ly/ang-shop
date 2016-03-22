@@ -4,6 +4,7 @@ var router = express.Router();
 
 // Models
 var Users = require('../models/users.js');
+var Items = require('../models/items.js');
 
 router.get('/', function(req, res){
   res.sendFile(process.cwd() + '/views/index.html');
@@ -44,6 +45,19 @@ router.put('/update-balance', function(req, res){
       res.send(doc);
     }
   });
+});
+
+// ANIMALS
+router.get('/animals', function(req, res){
+  Items.find({})
+    .exec(function(err, animals){
+      if(err){
+        console.log(err);
+      }else{
+        console.log(animals);
+        res.send(animals);
+      }
+    });
 });
 
 

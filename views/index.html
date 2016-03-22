@@ -13,7 +13,7 @@
 
     <div class="row text-center">
       <header>
-        <h1>Pet Store</h1>
+        <h1>Exotic Animal Market</h1>
       </header>
     </div>
 
@@ -29,7 +29,7 @@
 
       <div ng-hide="loggedIn">
         <div class="row text-center" ng-show="registered">
-          <h4>Hello, {{username}}.  Thank you for registering with us.  Please login to start buying your pets / emergency food.</h4>
+          <h4>Hello, {{username}}.  Thank you for registering with us.  Please login to start buying your exotic pets.</h4>
         </div>
         <div class="row text-center" ng-show="loginFail">
           <h4>Your credentials do not work.</h4>
@@ -53,6 +53,13 @@
             </form>
           </div>
         </div>
+      </div>
+
+      <div class="row text-center" ng-hide="activeAnimals">
+        <button ng-click="showMeTheAnimals()">Browse our list of exotic animals</button>
+      </div>
+      <div class="row" ng-show="activeAnimals">
+        <h2>List of Animals</h2>
       </div>
 
       <!-- REGISTER MODAL -->
