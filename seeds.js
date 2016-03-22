@@ -25,5 +25,6 @@ function itemCreate(itemn, iprice, stock){
 itemCreate('chihuahua', 20, 52);
 itemCreate('emu', 12000, 2);
 itemCreate('mini giraffe', 8000, 1);
-itemCreate('gutter cat', 25, 543);
+itemCreate('stray cat', 25, 543);
 itemCreate('puffin', 3200, 4);
+itemCreate('tiger', 47000, 1);
