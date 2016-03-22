@@ -16,10 +16,8 @@ var itemsSchema = new Schema({
     type: Number,
     trim: true,
     required: true
-  },
-  comments:[{
-    // TODO Finish this model
-  }]
+  }
+  // TODO Add comments with ref to users
 });
 
 module.exports = mongoose.model('Item', itemsSchema);

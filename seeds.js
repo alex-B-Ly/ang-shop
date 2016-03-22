@@ -3,14 +3,27 @@ var db = require('./config/connection.js');
 var Users = require('./models/users.js');
 var Items = require('./models/items.js');
 
-var user1 = new Users({username: 'Scorpion', password: 'getoverhere', balance: 666});
-var user2 = new Users({username: 'John', password: 'Spartan', balance: 117});
-var user3 = new Users({username: 'tara', password: 'pass', balance: 2750000});
-var user4 = new Users({username: 'Major Tom', password: 'ground control', balance: 100000});
-var user5 = new Users({username: 'Louis XVI', password: 'wheresyourheadat', balance: 50000});
-
-var userList = [user1, user2, user3, user4, user5];
-
-for(var i=0; i<userList.length; i++){
-  userList[i].save(function(err){if(err){throw err}});
+// USER SEEDS
+function userCreate(usern, pass, bal){
+  var user = new Users({username: usern, password: pass, balance: bal});
+  user.save();
 }
+
+userCreate('Scorpion', 'getoverhere', 666);
+userCreate('John', 'Spartan', 117);
+userCreate('tara', 'pass', 2750000);
+userCreate('Major Tom', 'ground control', 100000);
+userCreate('Louis XVI', 'wheresyourheadat', 50000);
+
+
+// ITEM SEEDS
+function itemCreate(itemn, iprice, stock){
+  var item = new Items({name: itemn, price: iprice, inStock: stock});
+  item.save();
+}
+
+itemCreate('chihuahua', 20, 52);
+itemCreate('emu', 12000, 2);
+itemCreate('mini giraffe', 8000, 1);
+itemCreate('gutter cat', 25, 543);
+itemCreate('puffin', 3200, 4);
