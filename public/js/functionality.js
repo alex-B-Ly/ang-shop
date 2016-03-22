@@ -53,7 +53,10 @@ ngApp.controller('shopController', function($scope, $http){
     })
   }
 
-
+  // showMeTheAninals
+  $scope.showMeTheAnimals = function(){
+    $scope.activeAnimals = true;
+  }
 
 
 });

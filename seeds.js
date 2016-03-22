@@ -10,10 +10,10 @@ function userCreate(usern, pass, bal){
 }
 
 userCreate('Scorpion', 'getoverhere', 666);
-userCreate('John', 'Spartan', 117);
+userCreate('Marco', 'areyourecordingthisbro', 25000);
 userCreate('tara', 'pass', 2750000);
-userCreate('Major Tom', 'ground control', 100000);
-userCreate('Louis XVI', 'wheresyourheadat', 50000);
+userCreate('Major Tom', 'ground control', 1000000);
+userCreate('Lara', 'empty', 7850000);
 
 
 // ITEM SEEDS
