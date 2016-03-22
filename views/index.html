@@ -38,13 +38,16 @@
 
       <div ng-show="loggedIn">
         <div class="row">
-          <div class="col-xs-12 col-md-6">
+          <div class="col-xs-12">
           <h3>Welcome, {{username}}. Here is your information:</h3>
           </div>
-          <div class="col-xs-12 col-md-6">
+          <div class="col-xs-12 col-md-6" ng-show="balance">
+            <h4>Current Balance: {{balance | currency}}</h4>
+          </div>
+          <div class="col-xs-12 col-md-6" ng-hide="balance">
             <span>Enter your balance</span>
             <form>
-              <input type="text" ng-model="shop.balanceUpdater" />
+              <input type="text" placeholder="{{balance}}" ng-model="shop.balanceUpdater" />
               <button class="btn btn-info" ng-click="updateBalance()">Submit</button>
               <button class="btn btn-danger">Cancel</button>
             </form>

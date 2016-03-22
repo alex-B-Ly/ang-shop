@@ -18,6 +18,7 @@ ngApp.controller('shopController', function($scope, $http){
         console.log('getting data back');
         $scope.loggedIn = true;
         $scope.username = result.data[0].username;
+        $scope.balance = result.data[0].balance;
       }else{
         $scope.loginFail = true;
       }
@@ -47,9 +48,9 @@ ngApp.controller('shopController', function($scope, $http){
       url: '/update-balance',
       data: {username: $scope.username, balance: shop.balanceUpdater}
     }).then(function(result){
-      console.log(result);
+      console.log(result.data.balance);
+      $scope.balance = result.data.balance;
     })
-
   }
 
 
