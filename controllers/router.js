@@ -59,5 +59,16 @@ router.get('/animals', function(req, res){
     });
 });
 
+// PURCHASE-ANIMAL
+router.put('/purchase-animal', function(req, res){
+  Items.findOneAndUpdate({_id: req.body.id}, {inStock: req.body.stock}, {new:true}, function(err, doc){
+    if(err){
+      res.send(err);
+    }else{
+      res.send(doc);
+    }
+  });
+});  
+
 
 module.exports = router;

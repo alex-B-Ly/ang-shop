@@ -58,10 +58,9 @@ ngApp.controller('shopController', function($scope, $http){
   $scope.showMeTheAnimals = function(){
     $scope.activeAnimals = true;
 
-    // TODO http GET to grab animals
     $http({
       method: 'GET',
-      url: '/animals',
+      url: '/animals'
     }).then(function(result){
       angular.forEach(result.data, function(animal){
         shop.animals.push(animal);
@@ -70,5 +69,18 @@ ngApp.controller('shopController', function($scope, $http){
     });
   }
 
+  // purchaseAnimal
+  $scope.purchaseAnimal = function(anim_id, anim_stock){
+    anim_stock--;
+
+    $http({
+      method: 'PUT',
+      url:'/purchase-animal',
+      data: {id: anim_id, stock: anim_stock}
+    }).then(function(result){
+      console.log(result);
+    });
+
+  }
 
 });

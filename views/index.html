@@ -71,8 +71,11 @@
               <p>Only {{ animal.inStock }} left</p>
             </div>
             <div class="panel-footer">
+              <form ng-submit="store.userComments()">
+                <button type="submit" class="btn btn-primary btn-block">View Comments</button>
+              </form>
               <form>
-                <button class="btn btn-success btn-block" ng-click="purchaseAnimal()">Purchase</button>
+                <button type="submit" class="btn btn-success btn-block" ng-click="purchaseAnimal(animal._id, animal.inStock)">Purchase</button>
               </form>
             </div>
           </div>

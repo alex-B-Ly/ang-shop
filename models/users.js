@@ -15,11 +15,11 @@ var usersSchema = new Schema({
   },
   balance:{
     type:Number
-  }
-  // cartItems:[{
-  //   type: Schema.Types.ObjectID,
-  //   ref:'Item'
-  // }]
+  },
+  cartItems:[{
+    type: Array,
+    ref:'Item'
+  }]
 });
 
 // usersSchema.pre('save', function(next){
