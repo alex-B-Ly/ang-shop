@@ -13,7 +13,7 @@
 
     <div class="row text-center">
       <header>
-        <h1>Exotic Animal Market</h1>
+        <h1>Exotic Animals Market</h1>
       </header>
     </div>
 
@@ -66,9 +66,15 @@
         <div class="col-xs-12 col-sm-6 col-md-3 text-center" ng-repeat="animal in shop.animals">
           <div class="panel panel-default">
             <div class="panel-body">
-              Panel content
+              <h3>{{ animal.name }}</h3>
+              <p>Price: {{ animal.price | currency }}</p>
+              <p>Only {{ animal.inStock }} left</p>
             </div>
-            <div class="panel-footer">Panel footer</div>
+            <div class="panel-footer">
+              <form>
+                <button class="btn btn-success btn-block" ng-click="purchaseAnimal()">Purchase</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
